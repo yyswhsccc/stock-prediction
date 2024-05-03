@@ -56,7 +56,17 @@ The model is built using PyTorch with the following architecture:
 ## Training Setup
 
 The training setup involved:
-- **Optimizer and Loss**: Adam optimizer with a custom loss function combining MSE, MAE, quantile loss, and Smooth L1 loss.
+## Training Setup
+
+The training setup for the model was as follows:
+
+- **Optimizer and Loss**: 
+  - **Optimizer**: The Adam optimizer was used with a learning rate of 0.00001 and a weight decay of 0.01 to help prevent overfitting.
+  - **Combined Loss Function**: A custom loss function was designed to combine multiple loss types, helping the model learn more effectively by capturing different error metrics:
+    - **Mean Squared Error (MSE) Loss**: Applied a weight of 0.05 to prioritize reducing large prediction errors.
+    - **Smooth L1 Loss**: Weighted at 0.1 to reduce the influence of outliers by combining L1 and L2 losses.
+    - **Mean Absolute Error (MAE) Loss**: The primary contributor with a weight of 0.45, emphasizing prediction accuracy.
+    - **Quantile Loss**: Applied at a weight of 0.4 to improve prediction accuracy by considering the quantile of prediction errors.
 - **Scheduler**: Learning rate scheduler to adjust the learning rate based on validation loss.
 - **Hyperparameters**: Batch size of 4, 50 epochs, learning rate of 0.00001, and weight decay of 0.01.
 - **Training Environment**: Trained using A100 GPUs on Google Colab.
