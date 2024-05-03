@@ -17,11 +17,33 @@ The feature engineering process involved:
 
 ## Data Preprocessing
 
-To prepare the data for model training:
-1. **Imputation and Cleaning**: Missing values were filled forward and backward, and remaining NaNs were dropped.
-2. **Standardization**: Scaled the data using `StandardScaler`.
-3. **Sequence Generation**: Generated sequences of a specified length from the time series data to feed into the model.
-4. **Train-Test Split**: The data was split into training, validation, and test sets, ensuring temporal continuity.
+To prepare the data for model training, the following steps were taken:
+
+1. **Imputation and Cleaning**: Missing values in the dataset were filled forward and backward, then remaining NaNs were dropped. Columns with any remaining missing values were identified, and rows containing NaN were printed for inspection.
+
+2. **Standardization**: Numeric columns were standardized using `StandardScaler`. The features to be scaled were selected dynamically based on the column index.
+
+3. **Sequence Generation**: Time series data were transformed into input sequences with a fixed length of `seq_length` (100 in this case). Each sequence consisted of features from multiple timesteps, while the target was set as the 'Open' price at the end of the sequence.
+
+4. **Train-Test Split**: 
+   - First, data was split into a full training set (90% of the data) and a test set (10%) with a `train_test_split`, ensuring no shuffling to maintain temporal continuity.
+   - The training set was further split into training and validation sets, with an 80-20 split, again maintaining temporal continuity.
+
+5. **Sanity Checks**: 
+   - NaN and infinite values were checked after all operations to ensure data quality.
+   - Total lengths of train and test sets were verified to ensure data integrity.
+
+6. **Save Cleaned Data**: The cleaned data was saved to `cleaned_stock_data.csv` for future reference and use.
+
+**Summary of Dataset Shapes:**
+- `X_train_full`: {X_train_full.shape}
+- `X_test`: {X_test.shape}
+- `X_train`: {X_train.shape}
+- `X_val`: {X_val.shape}
+
+Dates of the validation and test sets were printed to ensure the correct temporal split.
+
+The data for the model was sourced from `APPL_after_feature_engineering_and_cleaning.csv`, which includes data from February 1, 2002, to April 26, 2024, and all feature engineering performed.
 
 ## Model Configuration
 
