@@ -79,7 +79,7 @@ model = StockPredictor(
     n_layers=3    # The number of LSTM layers
 )
 
-model.apply(init_weights)  # Apply weight initialization
+model.apply(init_weights)  # Apply weight initialization```
 
 ## Training Setup
 
