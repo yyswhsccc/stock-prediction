@@ -64,7 +64,9 @@ The training setup for the model was as follows:
     - **Smooth L1 Loss**: Weighted at 0.1 to reduce the influence of outliers by combining L1 and L2 losses.
     - **Mean Absolute Error (MAE) Loss**: The primary contributor with a weight of 0.45, emphasizing prediction accuracy.
     - **Quantile Loss**: Applied at a weight of 0.4 to improve prediction accuracy by considering the quantile of prediction errors.
-- **Scheduler**: Learning rate scheduler to adjust the learning rate based on validation loss.
+- **Scheduler**:
+  - **Learning Rate Scheduler**: The scheduler used was `torch.optim.lr_scheduler.ReduceLROnPlateau`.
+  - **Configuration**: The scheduler was configured with a reduction factor of 0.5 and patience of 5 epochs. This means that if the validation loss did not improve after 5 epochs, the learning rate would be reduced by half.
 - **Hyperparameters**: Batch size of 4, 50 epochs, learning rate of 0.00001, and weight decay of 0.01.
 - **Training Environment**: Trained using A100 GPUs on Google Colab.
 
