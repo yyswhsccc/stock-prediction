@@ -50,3 +50,4 @@ The training setup involved:
 3. **R Code Attempts**: 
    - **ARIMA and GARCH Models**: Tried fitting ARIMA and GARCH models to the data, but both models failed to converge or fit the data well. This led to the exploration of machine learning models.
    - **Random Forest Model**: Also attempted a Random Forest model but found its predictions to be less accurate than desired.
+4. **Data Source**: The training data for the model comes from `APPL_after_feature_engineering_and_cleaning.csv`, which contains data from February 1, 2002, to April 26, 2024, and includes all feature engineering performed.
