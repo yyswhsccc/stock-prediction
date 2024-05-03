@@ -55,9 +55,6 @@ The model is built using PyTorch with the following architecture:
 
 ## Training Setup
 
-The training setup involved:
-## Training Setup
-
 The training setup for the model was as follows:
 
 - **Optimizer and Loss**: 
