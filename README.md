@@ -48,10 +48,38 @@ The data for the model was sourced from `APPL_after_feature_engineering_and_clea
 ## Model Configuration
 
 The model is built using PyTorch with the following architecture:
-- **LSTM Layer**: A 3-layer Bi-directional LSTM with a hidden size of 128 and a dropout of 0.2.
-- **Attention Mechanism**: A custom attention layer to enhance important features.
-- **Linear Layers**: Three linear layers with residual connections for feature extraction and regression.
-- **Residual Layer**: Adds skip connections between input features and attention outputs.
+
+- **LSTM Layer**: 
+  - The model has a 3-layer Bi-directional LSTM network (`nn.LSTM`) that takes 16 input features (`n_features`) and outputs 128 hidden features (`n_hidden`). 
+  - The LSTM is set to `batch_first=True` to maintain batch dimension consistency, has a dropout of 0.2, and is bidirectional to capture sequential dependencies from both forward and backward directions.
+
+- **Attention Mechanism**:
+  - A custom attention mechanism (`Attention` class) is designed to focus on relevant parts of the input sequence, capturing the most important information for prediction. 
+  - The attention mechanism computes scores (`attn_scores`) using matrix multiplication and applies softmax to obtain attention weights. The weighted sum of these scores is used to compute the attention output (`attn_output`).
+
+- **Linear Layers**:
+  - **First Linear Layer (`linear1`)**: Takes the attention output (256 features) and reduces it to 64 features.
+  - **Second Linear Layer (`linear2`)**: Further reduces the 64 features to 32.
+  - **Third Linear Layer (`linear3`)**: Outputs a single predicted value.
+
+- **Residual Layer**: 
+  - A residual layer (`residual_layer`) is used to add skip connections from the original input features (16) to the attention outputs. This connection adds the original input to the attention output, enabling the model to retain the initial information and improve training stability.
+
+- **Weight Initialization**:
+  - Custom weight initialization is applied to the linear layers and LSTM using the `init_weights` function, which applies the following:
+    - Linear layers: Kaiming normal initialization and bias initialization to 0.01.
+    - LSTM layers: Xavier initialization for input-hidden weights, orthogonal initialization for hidden-hidden weights, and bias initialization to zero.
+
+The final model is instantiated using these configurations:
+```python
+model = StockPredictor(
+    n_features=16,
+    n_hidden=128,
+    seq_len=100,  # The desired sequence length
+    n_layers=3    # The number of LSTM layers
+)
+
+model.apply(init_weights)  # Apply weight initialization
 
 ## Training Setup
 
