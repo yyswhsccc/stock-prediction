@@ -70,17 +70,6 @@ The model is built using PyTorch with the following architecture:
     - Linear layers: Kaiming normal initialization and bias initialization to 0.01.
     - LSTM layers: Xavier initialization for input-hidden weights, orthogonal initialization for hidden-hidden weights, and bias initialization to zero.
 
-The final model is instantiated using these configurations:
-```python
-model = StockPredictor(
-    n_features=16,
-    n_hidden=128,
-    seq_len=100,  # The desired sequence length
-    n_layers=3    # The number of LSTM layers
-)
-
-model.apply(init_weights)  # Apply weight initialization```
-
 ## Training Setup
 
 The training setup for the model was as follows:
