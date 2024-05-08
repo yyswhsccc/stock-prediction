@@ -13,8 +13,8 @@ This project aims to train a machine learning model to predict Apple's stock ope
 `git clone https://github.com/yyswhsccc/stock-prediction.git`
 Then run `pip install -r requirements.txt` to download all packages.
 2. Download historical data of the stock you intend to predict from a reliable financial website. Ensure the data is in CSV format; if not, convert it to CSV.
-3. Place the downloaded stock data into the "feature_engineering_and_others.ipynb" notebook. Run the notebook to perform feature engineering, resulting in a new CSV dataset.
-4. Insert the newly engineered CSV dataset into the "time_series_project (the whole training progress).ipynb" notebook. Sequentially execute the cells in the notebook to commence training and obtain results.
+3. Place the downloaded stock data into the `feature_engineering_and_others.ipynb` notebook. Run the notebook to perform feature engineering, resulting in a new CSV dataset.
+4. Insert the newly engineered CSV dataset into the `time_series_project (the whole training progress).ipynb` notebook. Sequentially execute the cells in the notebook to commence training and obtain results.
 
 Note: It's crucial to replace the plotting dates in the validation and test sections with the start and end dates printed from the "data cleaning" cell.
 
