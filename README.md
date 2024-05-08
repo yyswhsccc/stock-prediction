@@ -8,6 +8,15 @@ This project aims to train a machine learning model to predict Apple's stock ope
 
 **<span style="color:red">Attention</span>**: This project is my final project. In reality, I don't dabble in the stock market. Please use my model with caution. In case of any losses incurred due to erroneous predictions by my model, feel free to add me on WeChat or Discord. I'll be there to hear your woes.
 
+## How to use this model?
+1. Clone the repository to your local machine using git. Run the following command in your terminal:
+`git clone <repository_url>`
+2. Download historical data of the stock you intend to predict from a reliable financial website. Ensure the data is in CSV format; if not, convert it to CSV.
+3. Place the downloaded stock data into the "feature_engineering_and_others.ipynb" notebook. Run the notebook to perform feature engineering, resulting in a new CSV dataset.
+4. Insert the newly engineered CSV dataset into the "time_series_project (the whole training progress).ipynb" notebook. Sequentially execute the cells in the notebook to commence training and obtain results.
+
+Note: It's crucial to replace the plotting dates in the validation and test sections with the start and end dates printed from the "data cleaning" cell.
+
 ## Feature Engineering
 
 The feature engineering process involved:
