@@ -6,7 +6,7 @@ This project aims to train a machine learning model to predict Apple's stock ope
 ![GitHub Logo](model_with_best_validation's_test.png)
 ![GitHub Logo](model_woth_best_validation's_validation.JPG)
 
-**<span style="color:red">Attention</span>**: This project is my final project. In reality, I don't dabble in the stock market. Please use my model with caution. In case of any losses incurred due to erroneous predictions by my model, feel free to add me on WeChat. I'll be there to hear your woes.
+**<span style="color:red">Attention</span>**: This project is my final project. In reality, I don't dabble in the stock market. Please use my model with caution. In case of any losses incurred due to erroneous predictions by my model, feel free to add me on WeChat or Discord. I'll be there to hear your woes.
 
 ## Feature Engineering
 
