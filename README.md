@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project aims to train a machine learning model to predict Apple's stock opening price using historical data from February 1, 2002, to April 26, 2024. After training with the dataset provided by Apple Inc. starting from February 1, 2002, combined with feature engineering techniques, the model demonstrates a relatively accurate ability to forecast the future trends of the stock market within approximately three years, as illustrated in the figure below. 
+This project aims to train a machine learning model to predict Apple's stock opening price trend using historical data from February 1, 2002, to April 26, 2024. After training with the dataset provided by Apple Inc. starting from February 1, 2002, combined with feature engineering techniques, the model demonstrates a relatively accurate ability to forecast the future trends of the stock market within approximately three years, as illustrated in the figure below. 
 ![GitHub Logo](best_model_test.png)
 ![GitHub Logo](model_woth_best_validation's_validation.JPG)
 
