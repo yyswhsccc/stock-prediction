@@ -10,7 +10,7 @@ This project aims to train a machine learning model to predict Apple's stock ope
 
 ## How to use this model?
 1. Clone the repository to your local machine using git. Run the following command in your terminal:
-`git clone <repository_url>`
+`git clone [<repository_url>](https://github.com/yyswhsccc/stock-prediction.git)`
 2. Download historical data of the stock you intend to predict from a reliable financial website. Ensure the data is in CSV format; if not, convert it to CSV.
 3. Place the downloaded stock data into the "feature_engineering_and_others.ipynb" notebook. Run the notebook to perform feature engineering, resulting in a new CSV dataset.
 4. Insert the newly engineered CSV dataset into the "time_series_project (the whole training progress).ipynb" notebook. Sequentially execute the cells in the notebook to commence training and obtain results.
